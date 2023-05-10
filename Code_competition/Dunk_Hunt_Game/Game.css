@@ -1,0 +1,238 @@
+﻿@charset "UTF-8";
+@keyframes duckfly {
+
+    0% {
+        left: 150%;
+        top: 10%;
+    }
+
+    25% {
+        left: 80%;
+        top: 50%;
+    }
+
+    50% {
+        left: 50%;
+        top: 30%;
+    }
+
+    75% {
+        left: 30%;
+        top: 40%;
+    }
+
+    100% {
+        left: -50%;
+        top: 10%;
+    }
+}
+
+
+
+
+input:checked + label {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: rotate(120deg);
+    transform-origin: 50%;
+    z-index: -5;
+    animation: duck_die is linear infinite;
+}
+
+
+
+
+
+@keyframes duck_die {
+    0%{
+        left: -50%;
+        top: 100%;
+    }
+}
+
+input + label {
+    position: absolute;
+    left: -100px;
+    z-index: 1;
+    width: 36px;
+    height: 34px;
+    display: block;
+    z-index: 5;
+    transform: translate(-50%,-50%);
+    background: url(Img/duck_light.png) no-repeat left center;
+    background-position: -138px 0;
+}
+
+
+
+input:checked + label{
+    opacity:0;
+    transition:all 0.5s;
+    transform:rotate(120deg);
+    transform-origin: 50%;
+    z-index: -5;
+    animation:duck_die is linear infinite;
+
+}
+
+.duck:nth-last-of-type(1){
+    animation:duckfly 10s linear 1s infinite;
+    animation-direction:alternate;
+   
+}
+.duck:nth-last-of-type(2) {
+    animation: duckfly 20s linear 2s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(3) {
+    animation: duckfly 25s linear 3s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(4) {
+    animation: duckfly 30s linear 4s infinite;
+    animation-direction: alternate;
+    
+}
+
+
+.duck:nth-last-of-type(5) {
+    animation: duckfly 50s linear 5s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(6) {
+    animation: duckfly 30s linear 2s infinite;
+    animation-direction: alternate;
+   
+}
+
+.duck:nth-last-of-type(7) {
+    animation: duckfly 45s linear 5s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(8) {
+    animation: duckfly 50s linear 7s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(9) {
+    animation: duckfly 20s linear 2s infinite;
+    animation-direction: alternate;
+    
+}
+
+.duck:nth-last-of-type(10) {
+    animation: duckfly 10s linear 1s infinite;
+    animation-direction: alternate;
+    
+}
+.duck:nth-last-of-type(11) {
+    animation: duckfly 11s linear 2s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(12) {
+    animation: duckfly 18s linear 1s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(13) {
+    animation: duckfly 12s linear 1s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(14) {
+    animation: duckfly 10s linear 1s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(15) {
+    animation: duckfly 14s linear 4s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(16) {
+    animation: duckfly 10s linear 1s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(17) {
+    animation: duckfly 10s linear 1s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(18) {
+    animation: duckfly 10s linear 5s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(19) {
+    animation: duckfly 8s linear 3s infinite;
+    animation-direction: alternate;
+}
+
+.duck:nth-last-of-type(20) {
+    animation: duckfly 20s linear 30s infinite;
+    animation-direction: alternate;
+}
+
+
+
+
+.score {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    background-color: #ff0000;
+}
+.score::after{
+    content: counter(score);
+    display:inline-block;
+}
+
+.score::before {
+    content: 'score : ';
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+input:checked{
+    counter-increment: score;
+
+}
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: url(Img/aim.png), text;
+    overflow:hidden;
+}
+
+body::before {
+    content: '';
+    display:block;
+    position:fixed;
+    width: 1040%;
+    height: 70%;
+    z-index: 1;
+    background: url(Img/bg1.jpg) repeat-x bottom left;
+
+}
+
